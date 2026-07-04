@@ -1,76 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - SantiagoRivers</title>
-    <!-- CDN de Tailwind CSS -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- Iconos de Boxicons -->
-    <link href="https://unpkg.com" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Inicio - SantiagoRivers</title>
     <style>
-        /* Fondo con degradado similar al de la imagen */
+        /* === ESTILOS CSS EXTRAÍDOS Y LIMPIADOS DE PAPASECA.ME === */
+        
+        /* Fondo con el degradado radial exacto */
         body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             background: radial-gradient(circle at top right, #2d124d, #0c1020);
+        }
+
+        /* Tarjeta Central (Efecto Glassmorphism) */
+        .tarjeta-central {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            margin: 0 1.25rem;
+            border-radius: 1.5rem;
+            border: 1px solid #525252;
+            background-color: rgba(64, 64, 64, 0.6);
+            backdrop-filter: blur(64px);
+            -webkit-backdrop-filter: blur(64px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            font-size: 2.25rem;
+        }
+
+        /* Etiquetas de Colores dentro de la tarjeta */
+        .badge {
+            border-radius: 0.75rem;
+            padding: 0.125rem 0.5rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .badge-green { background-color: #16a34a; font-weight: 700; }
+        .badge-purple { background-color: #a855f7; }
+        .badge-amber { background-color: #d97706; }
+        .badge-red { 
+            background-color: #ef4444; 
+            text-decoration: none; 
+            color: white;
+            transition: transform 0.2s ease;
+        }
+        .badge-red:hover { transform: scale(1.05); }
+
+        .text-sub { font-size: 1.875rem; text-align: center; }
+
+        /* Barra de Navegación Flotante */
+        .nav-contenedor {
+            position: fixed;
+            bottom: 1.5rem;
+            z-10: 10;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            pointer-events: none;
+        }
+        
+        .nav-bar {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem;
+            border-radius: 1.5rem;
+            border: 1px solid #404040;
+            background-color: rgba(32, 30, 32, 0.4);
+            backdrop-filter: blur(64px);
+            -webkit-backdrop-filter: blur(64px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            pointer-events: auto;
+        }
+
+        /* Botones de la barra */
+        .nav-btn {
+            font-size: 1.5rem;
+            margin: 0.125rem;
+            padding: 0.625rem;
+            border: 1px solid #525252;
+            border-radius: 0.75rem;
+            background-color: transparent;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .nav-btn:hover {
+            background-color: rgba(64, 64, 64, 0.5);
+            transform: scale(1.05);
+        }
+        .nav-btn-active { background-color: #1d4ed8; }
+
+        /* Separador vertical de la barra */
+        .separador {
+            width: 2px;
+            height: 20px;
+            background-color: #525252;
+            border-radius: 9999px;
+            margin: 0 0.25rem;
         }
     </style>
 </head>
-<body class="h-screen w-screen flex flex-col justify-center items-center text-white m-0 overflow-hidden font-sans">
+<body>
 
     <!-- Tarjeta Central -->
-    <div class="bg-neutral-800/60 border border-neutral-700 p-6 md:p-8 rounded-3xl shadow-2xl flex flex-col items-center gap-4 text-center max-w-md mx-4">
-        <p class="text-3xl font-bold flex items-center justify-center gap-2">
-            Hola, soy 
-            <span class="bg-green-600 text-2xl px-3 py-1 rounded-xl flex items-center gap-2">
-                🌊 SantiagoRivers
-            </span>
+    <div class="tarjeta-central">
+        <p style="font-weight: bold; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+            Hola, soy
+            <span class="badge badge-green">🌊 SantiagoRivers</span>
         </p>
-        <p class="text-2xl">
-            Me suelen llamar 
-            <span class="bg-purple-600 font-semibold px-3 py-1 rounded-xl">Santiago</span>.
+        <p class="text-sub" style="margin: 0;">
+            Me suelen llamar <span class="badge badge-purple">Santiago</span>.
         </p>
-        <p class="text-2xl">
-            Soy 
-            <span class="bg-amber-600 font-semibold px-3 py-1 rounded-xl">programador fullstack</span>.
+        <p class="text-sub" style="margin: 0;">
+            Soy <span class="badge badge-amber">programador fullstack</span>.
         </p>
-        <p class="text-2xl">
-            Revisa 
-            <a href="#" class="bg-red-500 font-semibold px-3 py-1 rounded-xl hover:scale-105 transition-transform inline-block">Sobre mí</a>.
+        <p class="text-sub" style="margin: 0;">
+            Revisa <a class="badge badge-red" href="/about">Sobre mí</a>.
         </p>
     </div>
 
     <!-- Barra de Navegación Flotante Inferior -->
-    <div class="fixed bottom-6 z-10 flex justify-center w-full">
-        <nav class="bg-[#201e20]/40 border border-neutral-700/60 p-2.5 rounded-3xl flex flex-row gap-2 items-center justify-center shadow-2xl">
+    <div class="nav-contenedor">
+        <nav class="nav-bar">
             
-            <!-- Botón Inicio (Activo) -->
-            <a href="#" class="text-2xl p-2.5 border border-neutral-600/50 rounded-xl bg-blue-700 hover:scale-105 transition-transform flex items-center justify-center">
-                <i class='bx bxs-home'></i>
+            <!-- Inicio (Activo) -->
+            <a aria-label="Inicio" href="/" class="nav-btn nav-btn-active">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://w3.org">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M12 3 4 9v12h5v-7h6v7h5V9z"></path>
+                </svg>
             </a>
-            
-            <!-- Botón Proyectos -->
-            <a href="#" class="text-2xl p-2.5 border border-neutral-600/50 rounded-xl hover:bg-neutral-700/50 hover:scale-105 transition-transform flex items-center justify-center">
-                <i class='bx bxs-grid-alt'></i>
+
+            <!-- Proyectos -->
+            <a aria-label="Proyectos" href="/projects" class="nav-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://w3.org">
+                    <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"></path>
+                </svg>
             </a>
-            
-            <!-- Botón Sobre mí -->
-            <a href="#" class="text-2xl p-2.5 border border-neutral-600/50 rounded-xl hover:bg-neutral-700/50 hover:scale-105 transition-transform flex items-center justify-center">
-                <i class='bx bxs-user'></i>
+
+            <!-- Sobre mí -->
+            <a aria-label="Sobre mí" href="/about" class="nav-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://w3.org">
+                    <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"></path>
+                </svg>
             </a>
-            
+
             <!-- Separador -->
-            <div class="w-[2px] h-5 bg-neutral-600 rounded-full mx-1"></div>
-            
-            <!-- Botón Correo -->
-            <a href="mailto:tu-correo@ejemplo.com" class="text-2xl p-2.5 border border-neutral-600/50 rounded-xl hover:bg-neutral-700/50 hover:scale-105 transition-transform flex items-center justify-center">
-                <i class='bx bxs-envelope'></i>
+            <div class="separador"></div>
+
+            <!-- Correo -->
+            <a aria-label="Contacto" href="mailto:santijrm2015@gmail.com" class="nav-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://w3.org">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"></path>
+                </svg>
             </a>
-            
-            <!-- Botón X (Twitter) -->
-            <a href="#" target="_blank" class="text-2xl p-2.5 border border-neutral-600/50 rounded-xl hover:bg-neutral-700/50 hover:scale-105 transition-transform flex items-center justify-center">
-                <i class='bx bxl-twitter'></i>
-            </a>
-            
+
         </nav>
     </div>
 
