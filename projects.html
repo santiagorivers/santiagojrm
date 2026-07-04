@@ -4,6 +4,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Proyectos - SantiagoRivers</title>
+    <!-- CDN clásico de Tailwind CSS para asegurar compatibilidad directa en GitHub Pages -->
+    <script src="https://jsdelivr.net"></script>
     <style>
         /* === ESTILOS CSS CON ANIMACIÓN DE FONDO ROJO === */
         @keyframes cambiarFondoRojo {
@@ -53,34 +55,38 @@
             }
         }
 
-        /* Tarjeta de Proyecto (Efecto Glassmorphism) */
+        /* Tarjeta de Proyecto (Efecto Glassmorphism Oscuro) */
         .tarjeta-proyecto {
             display: flex;
             flex-direction: column;
-            background-color: rgba(20, 20, 20, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(23, 23, 23, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 1.5rem;
             padding: 1.5rem;
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
         }
 
+        /* Contenedor centrado para la imagen */
         .img-contenedor {
             display: flex;
             width: 100%;
             justify-content: center;
             align-items: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
         }
 
+        /* TAMAÑO CORREGIDO: Fijo, proporcional y elegante */
         .proyecto-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 2.5rem;
-            transition: transform 0.2s ease;
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            border-radius: 1.5rem;
+            transition: transform 0.3s ease;
         }
         .proyecto-logo:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .info-proyecto {
@@ -93,16 +99,18 @@
 
         .proyecto-titulo {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #ffffff;
             text-decoration: none;
             width: fit-content;
+            margin-bottom: 0.25rem;
         }
 
         .proyecto-desc {
             color: #a3a3a3;
-            margin: 0.25rem 0 0 0;
+            margin: 0;
             font-size: 0.95rem;
+            line-height: 1.4;
         }
 
         /* Etiquetas del Proyecto */
@@ -114,22 +122,24 @@
         }
 
         .tag {
-            background-color: rgba(40, 40, 40, 0.8);
+            background-color: rgba(38, 38, 38, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 0.75rem;
+            padding: 0.5rem 0.85rem;
             font-size: 0.75rem;
-            color: #ffffff;
+            color: #d4d4d4;
             font-weight: 700;
             border-radius: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .tag-head-dev {
             background-color: rgba(220, 38, 38, 0.8);
             border: 1px solid rgba(255, 100, 100, 0.3);
+            color: #ffffff;
         }
 
-        /* Barra Flotante Inferior */
+        /* Barra Flotante Inferior Completa */
         .nav-contenedor {
             position: fixed;
             bottom: 1.5rem;
@@ -188,59 +198,72 @@
 <body>
 
     <div class="proyectos-contenedor">
-        <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">Mis Proyectos</h1>
+        <h1 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: -0.02em;">Mis Proyectos</h1>
         
         <div class="proyectos-grid">
+            
             <!-- MineLuck -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo" class="proyecto-logo" src="mineluck.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="MineLuck" class="proyecto-logo" src="mineluck.png" onerror="this.src='https://placehold.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">MineLuck</span>
                     <p class="proyecto-desc">Es un servidor de modalidades boxpvps.</p>
                 </div>
-                <div class="tags-contenedor"><div class="tag">Dev</div><div class="tag">Admin</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag">Dev</div>
+                    <div class="tag">Admin</div>
+                </div>
             </section>
 
             <!-- HydroxMC -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo" class="proyecto-logo" src="hydroxmc.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="HydroxMC" class="proyecto-logo" src="hydroxmc.png" onerror="this.src='https://placehold.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">HydroxMC</span>
                     <p class="proyecto-desc">Es un servidor de modalidades boxpvps.</p>
                 </div>
-                <div class="tags-contenedor"><div class="tag tag-head-dev">Head-Dev</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag tag-head-dev">Head-Dev</div>
+                </div>
             </section>
 
             <!-- LaJerarquia -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo" class="proyecto-logo" src="lajerarquia.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="LaJerarquia" class="proyecto-logo" src="lajerarquia.png" onerror="this.src='https://placehold.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">LaJerarquia</span>
                     <p class="proyecto-desc">Es un servidor de modalidades survival.</p>
                 </div>
-                <div class="tags-contenedor"><div class="tag">Dev</div><div class="tag">Admin</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag">Dev</div>
+                    <div class="tag">Admin</div>
+                </div>
             </section>
 
             <!-- Portafolio Personal -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo" class="proyecto-logo" src="logo.png" onerror="this.src='https://ibb.co'"/>
+                    <img alt="Portafolio Personal" class="proyecto-logo" src="logo.png" onerror="this.src='https://ibb.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <a class="proyecto-titulo" href="index.html">Portafolio Personal</a>
                 </div>
-                <div class="tags-contenedor"><div class="tag">Creator</div><div class="tag">Frontend</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag">Creator</div>
+                    <div class="tag">Frontend</div>
+                </div>
             </section>
+
         </div>
     </div>
 
-    <!-- Barra de Navegación Flotante Completa -->
+    <!-- Barra de Navegación Flotante Completa Estilo Captura -->
     <div class="nav-contenedor">
         <nav class="nav-bar">
             <a aria-label="Inicio" href="index.html" class="nav-btn">
@@ -251,12 +274,3 @@
             </a>
             <a aria-label="Proyectos" href="projects.html" class="nav-btn nav-btn-active">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://w3.org">
-                    <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"></path>
-                </svg>
-            </a>
-            <a aria-label="Sobre mí" href="about.html" class="nav-btn">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://w3.org">
-                    <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"></path>
-                </svg>
-            </a>
-            <div class="separador"></div>
