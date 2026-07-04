@@ -3,71 +3,131 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Inicio - SantiagoRivers</title>
+    <title>Proyectos - SantiagoRivers</title>
     <style>
-        /* === ESTILOS CSS EXTRAÍDOS Y LIMPIADOS DE PAPASECA.ME === */
+        /* === ESTILOS CSS CON ANIMACIÓN DE FONDO ROJO === */
         
-        /* Fondo con el degradado radial exacto */
+        @keyframes cambiarFondoRojo {
+            0% {
+                background: radial-gradient(circle at top right, #ff2222, #3a0000);
+            }
+            50% {
+                background: radial-gradient(circle at top right, #990000, #150000);
+            }
+            100% {
+                background: radial-gradient(circle at top right, #ff2222, #3a0000);
+            }
+        }
+
         body {
             margin: 0;
             width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            background: radial-gradient(circle at top right, #2d124d, #0c1020);
+            padding-bottom: 8rem; /* Espacio para que la barra flotante no tape el contenido */
+            animation: cambiarFondoRojo 8s ease-in-out infinite;
         }
 
-        /* Tarjeta Central (Efecto Glassmorphism) */
-        .tarjeta-central {
+        /* Contenedor Principal de Proyectos */
+        .proyectos-contenedor {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            margin: 0 1.25rem;
-            border-radius: 1.5rem;
-            border: 1px solid #525252;
-            background-color: rgba(64, 64, 64, 0.6);
-            backdrop-filter: blur(64px);
-            -webkit-backdrop-filter: blur(64px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            font-size: 2.25rem;
+            padding: 2rem;
+            max-w: 72rem;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        /* Etiquetas de Colores dentro de la tarjeta */
-        .badge {
-            border-radius: 0.75rem;
-            padding: 0.125rem 0.5rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+        /* Tarjeta de Proyecto (Efecto Glassmorphism) */
+        .tarjeta-proyecto {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-w: 28rem;
+            background-color: rgba(20, 20, 20, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-top: 1.5rem;
         }
-        .badge-green { background-color: #16a34a; font-weight: 700; }
-        .badge-purple { background-color: #a855f7; }
-        .badge-amber { background-color: #d97706; }
-        .badge-red { 
-            background-color: #ef4444; 
-            text-decoration: none; 
-            color: white;
+
+        .img-contenedor {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .proyecto-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 2.5rem;
             transition: transform 0.2s ease;
         }
-        .badge-red:hover { transform: scale(1.05); }
+        .proyecto-logo:hover {
+            transform: scale(1.05);
+        }
 
-        .text-sub { font-size: 1.875rem; text-align: center; }
+        .info-proyecto {
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .proyecto-titulo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            width: fit-content;
+        }
+        .proyecto-titulo:hover {
+            text-decoration: underline;
+        }
+
+        .proyecto-desc {
+            color: #a3a3a3;
+            margin: 0.25rem 0 0 0;
+        }
+
+        /* Etiquetas del Proyecto */
+        .tags-contenedor {
+            padding-top: 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: rgba(40, 40, 40, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+            color: #a3a3a3;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            text-transform: uppercase;
+            transition: background-color 0.1s ease;
+        }
+        .tag:hover {
+            background-color: rgba(60, 60, 60, 0.8);
+        }
 
         /* Barra de Navegación Flotante */
         .nav-contenedor {
             position: fixed;
             bottom: 1.5rem;
-            z-10: 10;
+            z-index: 10;
             display: flex;
             width: 100%;
             justify-content: center;
@@ -82,20 +142,19 @@
             justify-content: center;
             padding: 0.625rem;
             border-radius: 1.5rem;
-            border: 1px solid #404040;
-            background-color: rgba(32, 30, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(20, 15, 15, 0.5);
             backdrop-filter: blur(64px);
             -webkit-backdrop-filter: blur(64px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             pointer-events: auto;
         }
 
-        /* Botones de la barra */
         .nav-btn {
             font-size: 1.5rem;
             margin: 0.125rem;
             padding: 0.625rem;
-            border: 1px solid #525252;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 0.75rem;
             background-color: transparent;
             color: white;
@@ -106,16 +165,15 @@
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
         .nav-btn:hover {
-            background-color: rgba(64, 64, 64, 0.5);
+            background-color: rgba(255, 255, 255, 0.1);
             transform: scale(1.05);
         }
-        .nav-btn-active { background-color: #1d4ed8; }
+        .nav-btn-active { background-color: #b91c1c; } /* El botón de Proyectos ahora está activo y es rojo */
 
-        /* Separador vertical de la barra */
         .separador {
             width: 2px;
             height: 20px;
-            background-color: #525252;
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 9999px;
             margin: 0 0.25rem;
         }
@@ -123,45 +181,51 @@
 </head>
 <body>
 
-    <!-- Tarjeta Central -->
-    <div class="tarjeta-central">
-        <p style="font-weight: bold; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-            Hola, soy
-            <span class="badge badge-green">🌊 SantiagoRivers</span>
-        </p>
-        <p class="text-sub" style="margin: 0;">
-            Me suelen llamar <span class="badge badge-purple">Santiago</span>.
-        </p>
-        <p class="text-sub" style="margin: 0;">
-            Soy <span class="badge badge-amber">programador fullstack</span>.
-        </p>
-        <p class="text-sub" style="margin: 0;">
-            Revisa <a class="badge badge-red" href="/about">Sobre mí</a>.
-        </p>
+    <!-- Contenedor de Proyectos -->
+    <div class="proyectos-contenedor">
+        
+        <!-- Tarjeta de Proyecto 1 (DiosesMC) -->
+        <section class="tarjeta-proyecto">
+            <div class="img-contenedor">
+                <a target="_blank" href="https://diosesmc.net/">
+                    <!-- Puedes reemplazar este logo de ejemplo por la URL de la imagen que quieras -->
+                    <img alt="Logo de DiosesMC" class="proyecto-logo" src="https://diosesmc.net" onerror="this.src='https://placehold.co'"/>
+                </a>
+            </div>
+            <div class="info-proyecto">
+                <a class="proyecto-titulo" target="_blank" href="https://diosesmc.net/">DiosesMC</a>
+                <p class="proyecto-desc">El servidor de Minecraft de Vegetta777 y Willyrex.</p>
+            </div>
+            <div class="tags-contenedor">
+                <div class="tag">Desarrollador</div>
+                <div class="tag">Java</div>
+            </div>
+        </section>
+
     </div>
 
     <!-- Barra de Navegación Flotante Inferior -->
     <div class="nav-contenedor">
         <nav class="nav-bar">
             
-            <!-- Inicio (Activo) -->
-            <a aria-label="Inicio" href="/" class="nav-btn nav-btn-active">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://w3.org">
+            <!-- Inicio -->
+            <a aria-label="Inicio" href="index.html" class="nav-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path d="M12 3 4 9v12h5v-7h6v7h5V9z"></path>
                 </svg>
             </a>
 
-            <!-- Proyectos -->
-            <a aria-label="Proyectos" href="/projects" class="nav-btn">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://w3.org">
+            <!-- Proyectos (Activo en esta página) -->
+            <a aria-label="Proyectos" href="projects.html" class="nav-btn nav-btn-active">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"></path>
                 </svg>
             </a>
 
             <!-- Sobre mí -->
-            <a aria-label="Sobre mí" href="/about" class="nav-btn">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://w3.org">
+            <a aria-label="Sobre mí" href="about.html" class="nav-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"></path>
                 </svg>
             </a>
@@ -171,7 +235,7 @@
 
             <!-- Correo -->
             <a aria-label="Contacto" href="mailto:santijrm2015@gmail.com" class="nav-btn">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://w3.org">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"></path>
                 </svg>
