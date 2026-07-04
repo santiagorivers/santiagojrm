@@ -174,7 +174,15 @@
             background-color: rgba(255, 255, 255, 0.1);
             transform: scale(1.05);
         }
-        .nav-btn-active { background-color: #b91c1c; }
+        .nav-btn-active { background-color: #1d4ed8; }
+
+        .separador {
+            width: 2px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 9999px;
+            margin: 0 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -183,70 +191,56 @@
         <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">Mis Proyectos</h1>
         
         <div class="proyectos-grid">
-            
             <!-- MineLuck -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo de MineLuck" class="proyecto-logo" src="mineluck.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="Logo" class="proyecto-logo" src="mineluck.png" onerror="this.src='https://placehold.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">MineLuck</span>
                     <p class="proyecto-desc">Es un servidor de modalidades boxpvps.</p>
                 </div>
-                <div class="tags-contenedor">
-                    <div class="tag">Dev</div>
-                    <div class="tag">Admin</div>
-                </div>
+                <div class="tags-contenedor"><div class="tag">Dev</div><div class="tag">Admin</div></div>
             </section>
 
             <!-- HydroxMC -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo de HydroxMC" class="proyecto-logo" src="hydroxmc.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="Logo" class="proyecto-logo" src="hydroxmc.png" onerror="this.src='https://placehold.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">HydroxMC</span>
                     <p class="proyecto-desc">Es un servidor de modalidades boxpvps.</p>
                 </div>
-                <div class="tags-contenedor">
-                    <div class="tag tag-head-dev">Head-Dev</div>
-                </div>
+                <div class="tags-contenedor"><div class="tag tag-head-dev">Head-Dev</div></div>
             </section>
 
             <!-- LaJerarquia -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo de LaJerarquia" class="proyecto-logo" src="lajerarquia.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="Logo" class="proyecto-logo" src="lajerarquia.png" onerror="this.src='https://placehold.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">LaJerarquia</span>
                     <p class="proyecto-desc">Es un servidor de modalidades survival.</p>
                 </div>
-                <div class="tags-contenedor">
-                    <div class="tag">Dev</div>
-                    <div class="tag">Admin</div>
-                </div>
+                <div class="tags-contenedor"><div class="tag">Dev</div><div class="tag">Admin</div></div>
             </section>
 
             <!-- Portafolio Personal -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
-                    <img alt="Logo de Portafolio Personal" class="proyecto-logo" src="logo.png" onerror="this.src='https://placehold.co'"/>
+                    <img alt="Logo" class="proyecto-logo" src="logo.png" onerror="this.src='https://ibb.co'"/>
                 </div>
                 <div class="info-proyecto">
                     <a class="proyecto-titulo" href="index.html">Portafolio Personal</a>
-                    <!-- Sin descripción (lore) -->
                 </div>
-                <div class="tags-contenedor">
-                    <div class="tag">Creator</div>
-                    <div class="tag">Frontend</div>
-                </div>
+                <div class="tags-contenedor"><div class="tag">Creator</div><div class="tag">Frontend</div></div>
             </section>
-
         </div>
     </div>
 
-    <!-- Barra de Navegación Flotante Minimalista -->
+    <!-- Barra de Navegación Flotante Completa -->
     <div class="nav-contenedor">
         <nav class="nav-bar">
             <a aria-label="Inicio" href="index.html" class="nav-btn">
@@ -260,8 +254,9 @@
                     <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"></path>
                 </svg>
             </a>
-        </nav>
-    </div>
-
-</body>
-</html>
+            <a aria-label="Sobre mí" href="about.html" class="nav-btn">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://w3.org">
+                    <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"></path>
+                </svg>
+            </a>
+            <div class="separador"></div>
