@@ -37,7 +37,7 @@
             box-sizing: border-box;
         }
 
-        /* Grid para organizar las tarjetas de dos en dos en pantallas grandes */
+        /* Grid para organizar las tarjetas de dos en dos */
         .proyectos-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -188,16 +188,15 @@
     <div class="proyectos-contenedor">
         <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">Mis Proyectos</h1>
         
-        <!-- Grid de Tarjetas -->
         <div class="proyectos-grid">
             
-            <!-- Proyecto 1: MineLuck -->
+            <!-- MineLuck -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
                     <img alt="Logo de MineLuck" class="proyecto-logo" src="https://placehold.co"/>
                 </div>
                 <div class="info-proyecto">
-                    <a class="proyecto-titulo" href="#">MineLuck</a>
+                    <span class="proyecto-titulo">MineLuck</span>
                     <p class="proyecto-desc">Servidor de Minecraft enfocado en modalidades personalizadas y una economía única.</p>
                 </div>
                 <div class="tags-contenedor">
@@ -206,13 +205,13 @@
                 </div>
             </section>
 
-            <!-- Proyecto 2: HydroxMC -->
+            <!-- HydroxMC -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
                     <img alt="Logo de HydroxMC" class="proyecto-logo" src="https://placehold.co"/>
                 </div>
                 <div class="info-proyecto">
-                    <a class="proyecto-titulo" href="#">HydroxMC</a>
+                    <span class="proyecto-titulo">HydroxMC</span>
                     <p class="proyecto-desc">Red de servidores con optimización de red avanzada y configuraciones competitivas.</p>
                 </div>
                 <div class="tags-contenedor">
@@ -221,13 +220,13 @@
                 </div>
             </section>
 
-            <!-- Proyecto 3: LaJerarquia -->
+            <!-- LaJerarquia -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
                     <img alt="Logo de LaJerarquia" class="proyecto-logo" src="https://placehold.co"/>
                 </div>
                 <div class="info-proyecto">
-                    <a class="proyecto-titulo" href="#">LaJerarquia</a>
+                    <span class="proyecto-titulo">LaJerarquia</span>
                     <p class="proyecto-desc">Proyecto enfocado en sistemas PvP, gestión de rangos dinámicos y eventos globales estructurados.</p>
                 </div>
                 <div class="tags-contenedor">
@@ -236,7 +235,7 @@
                 </div>
             </section>
 
-            <!-- Proyecto 4: Portafolio Personal -->
+            <!-- Portafolio Personal -->
             <section class="tarjeta-proyecto">
                 <div class="img-contenedor">
                     <img alt="Logo de Portafolio Personal" class="proyecto-logo" src="https://placehold.co"/>
@@ -257,12 +256,14 @@
     <!-- Barra de Navegación Flotante Inferior -->
     <div class="nav-contenedor">
         <nav class="nav-bar">
+            <!-- Inicio (Ruta corregida) -->
             <a aria-label="Inicio" href="index.html" class="nav-btn">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://w3.org">
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path d="M12 3 4 9v12h5v-7h6v7h5V9z"></path>
                 </svg>
             </a>
+            <!-- Proyectos (Ruta corregida) -->
             <a aria-label="Proyectos" href="projects.html" class="nav-btn nav-btn-active">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://w3.org">
                     <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"></path>
