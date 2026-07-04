@@ -6,7 +6,7 @@
     <title>Proyectos - SantiagoRivers</title>
     <style>
         /* === ESTILOS CSS CON ANIMACIÓN DE FONDO ROJO === */
-        @keyframes cambiarFojoRojo {
+        @keyframes cambiarFondoRojo {
             0% { background: radial-gradient(circle at top right, #ff2222, #3a0000); }
             50% { background: radial-gradient(circle at top right, #990000, #150000); }
             100% { background: radial-gradient(circle at top right, #ff2222, #3a0000); }
@@ -23,7 +23,7 @@
             flex-direction: column;
             align-items: center;
             padding-bottom: 8rem;
-            animation: cambiarFojoRojo 8s ease-in-out infinite;
+            animation: cambiarFondoRojo 8s ease-in-out infinite;
         }
 
         /* Contenedor Principal de Proyectos */
@@ -183,45 +183,66 @@
         <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">Mis Proyectos</h1>
         
         <div class="proyectos-grid">
+            
             <!-- MineLuck -->
             <section class="tarjeta-proyecto">
-                <div class="img-contenedor"><img alt="Logo" class="proyecto-logo" src="https://placehold.co"/></div>
+                <div class="img-contenedor">
+                    <img alt="Logo de MineLuck" class="proyecto-logo" src="mineluck.png" onerror="this.src='https://placehold.co'"/>
+                </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">MineLuck</span>
-                    <p class="proyecto-desc">Servidor de Minecraft enfocado en modalidades personalizadas y una economía única.</p>
+                    <p class="proyecto-desc">Es un servidor de modalidades boxpvps.</p>
                 </div>
-                <div class="tags-contenedor"><div class="tag">Dev</div><div class="tag">Admin</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag">Dev</div>
+                    <div class="tag">Admin</div>
+                </div>
             </section>
 
             <!-- HydroxMC -->
             <section class="tarjeta-proyecto">
-                <div class="img-contenedor"><img alt="Logo" class="proyecto-logo" src="https://placehold.co"/></div>
+                <div class="img-contenedor">
+                    <img alt="Logo de HydroxMC" class="proyecto-logo" src="hydroxmc.png" onerror="this.src='https://placehold.co'"/>
+                </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">HydroxMC</span>
-                    <p class="proyecto-desc">Red de servidores con optimización de red avanzada y configuraciones competitivas.</p>
+                    <p class="proyecto-desc">Es un servidor de modalidades boxpvps.</p>
                 </div>
-                <div class="tags-contenedor"><div class="tag tag-head-dev">Head-Dev</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag tag-head-dev">Head-Dev</div>
+                </div>
             </section>
 
             <!-- LaJerarquia -->
             <section class="tarjeta-proyecto">
-                <div class="img-contenedor"><img alt="Logo" class="proyecto-logo" src="https://placehold.co"/></div>
+                <div class="img-contenedor">
+                    <img alt="Logo de LaJerarquia" class="proyecto-logo" src="lajerarquia.png" onerror="this.src='https://placehold.co'"/>
+                </div>
                 <div class="info-proyecto">
                     <span class="proyecto-titulo">LaJerarquia</span>
-                    <p class="proyecto-desc">Proyecto enfocado en sistemas PvP, gestión de rangos dinámicos y eventos globales estructurados.</p>
+                    <p class="proyecto-desc">Es un servidor de modalidades survival.</p>
                 </div>
-                <div class="tags-contenedor"><div class="tag">Dev</div><div class="tag">Admin</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag">Dev</div>
+                    <div class="tag">Admin</div>
+                </div>
             </section>
 
             <!-- Portafolio Personal -->
             <section class="tarjeta-proyecto">
-                <div class="img-contenedor"><img alt="Logo" class="proyecto-logo" src="https://placehold.co"/></div>
+                <div class="img-contenedor">
+                    <img alt="Logo de Portafolio Personal" class="proyecto-logo" src="logo.png" onerror="this.src='https://placehold.co'"/>
+                </div>
                 <div class="info-proyecto">
                     <a class="proyecto-titulo" href="index.html">Portafolio Personal</a>
-                    <p class="proyecto-desc">El sitio web interactivo en el que te encuentras ahora mismo. Creado con HTML5, CSS3 nativo y un fondo animado.</p>
+                    <!-- Sin descripción (lore) -->
                 </div>
-                <div class="tags-contenedor"><div class="tag">Creator</div><div class="tag">Frontend</div></div>
+                <div class="tags-contenedor">
+                    <div class="tag">Creator</div>
+                    <div class="tag">Frontend</div>
+                </div>
             </section>
+
         </div>
     </div>
 
